@@ -8,8 +8,11 @@ from functions import *
 
 """
 1. install all the requirements on the terminal with:
-pip install requirements.txt
-3. Run this file, you can change the number on the variable below.
+pip install selenium
+pip install imageio
+pip install Pillow
+pip install numpy
+2. Run this file, you can change the number on the variable below.
 """
 phone_number = '775000000'
 def open_uc(phone_number,headless=False):
