@@ -15,7 +15,8 @@ pip install numpy
 2. Run this file, you can change the number on the variable below.
 """
 phone_number = '775000000'
-def open_uc(phone_number,headless=False):
+country = 'Iraq'
+def open_uc(phone_number,country,headless=False):
 	gl = GoLogin({
 		'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MWExNTdkZjAxOTg5MzdmZGFhZGI5NmEiLCJ0eXBlIjoiZGV2Iiwiand0aWQiOiI2MWExNTg0YmNjYjU4YWY0MGFiZTM5OTAifQ.8KJlR9hE3JBfhmR26M1aJBvwKMk91SIZcHrAPH2V63Q',
 		'profile_id': '61a160fc8eecc3b0bad25c72',
@@ -34,7 +35,7 @@ def open_uc(phone_number,headless=False):
 	driver = webdriver.Chrome(executable_path=chrome_driver_path, options=chrome_options)
 	driver.get("http://tiktok.com/signup")
 	date_of_birth= [randrange(1,28),randrange(1,12),randrange(1980,2000)]
-	country = 'Iraq'
+	country = country
 	WebDriverWait(driver, 10).until(
 		EC.presence_of_element_located((By.XPATH, '//div[contains(text(),"Use phone")]'))
 	).click()
@@ -185,4 +186,4 @@ def open_uc(phone_number,headless=False):
 	time.sleep(3)
 	gl.stop()
 
-open_uc(phone_number)
+open_uc(phone_number,country)
